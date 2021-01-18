@@ -108,6 +108,11 @@ class GPUConfig {
     rgbResMap["Quadro K620M"] = std::pair<int, int>(448, 48);
     so3StepMap["Quadro K620M"] = std::pair<int, int>(32, 48);
 
+    icpStepMap["GeForce GTX 1080 Ti"] = std::pair<int, int>(160, 112);
+    rgbStepMap["GeForce GTX 1080 Ti"] = std::pair<int, int>(128, 80);
+    rgbResMap["GeForce GTX 1080 Ti"] = std::pair<int, int>(288, 192);
+    so3StepMap["GeForce GTX 1080 Ti"] = std::pair<int, int>(368, 64);
+
     if (icpStepMap.find(dev) == icpStepMap.end()) {
       std::stringstream strs;
       strs << "Your GPU \"" << dev << "\" isn't in the ICP Step performance database, please add it";

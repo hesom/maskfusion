@@ -29,3 +29,6 @@ deps/freetype-gl-cpp/
 deps/gSLICr/
 deps/opencv/
 deps/toml11/
+
+*.klg
+*.ply

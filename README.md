@@ -37,7 +37,7 @@ In the root directory of this repository, run
 ```
 docker build . -t maskfusion
 ```
-to build the image. After that you can either use `./run.sh /path/to/klg [optional arguments]` to run MaskFusion on a klg file or `./run_on_folder.sh /path/to/folder [optional arguments]` to run MaskFusion on a folder which contains Color####.jpg (or .png) Depth####.exr (or.png) and optionally Mask####.png and Mask####.txt files.
+to build the image. You might need to modify the camera intrinsics and resolution in `GUI/MainController.cpp` to your needs.  After that you can either use `./run.sh /path/to/klg [optional arguments]` to run MaskFusion on a klg file or `./run_on_folder.sh /path/to/folder [optional arguments]` to run MaskFusion on a folder which contains Color####.jpg (or .png) Depth####.exr (or.png) and optionally Mask####.png and Mask####.txt files.
 It is highly recommended to precompute the masks. For this you can use the utility script `./compute_masks.sh /path/to/input/dir /path/to/output/dir`. You can filter a subset of classes using the optional `--filter [CLASS 1] [CLASS  2] ...` argument. Copy the masks directly into the root of the input folder to directly use them with `run_on_folder.sh`. 
 
 Modify the `filter_classes` and `trackable_classes` in `config.toml.in` to your needs. Changes to this file require the docker container to be rebuilt (run the command above again). `filter_classes` represents the classes that should be segmented and `trackable_classes` represents the classes that are movable, which should be a subset of `filter_classes`.

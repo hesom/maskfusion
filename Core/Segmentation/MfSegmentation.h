@@ -59,7 +59,7 @@ public:
   const float minMaskModelOverlap; // Min overlap to existing models, ratio of mask size
   const int minMappedComponentSize;
 
-  int personClassID = 255;
+  int personClassID = 1;
 
  public:
   MfSegmentation(int w,

@@ -6,6 +6,7 @@ Release/
 debug/
 Debug/
 Default/
+.vscode/
 python-environment/
 build_*
 CMakeFiles

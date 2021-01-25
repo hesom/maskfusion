@@ -24,10 +24,10 @@ class_names = ['BG', 'person', 'bicycle', 'car', 'motorcycle', 'airplane',
 model_path = "@MASKFUSION_MODEL_FILE@"
 
 # If not empty, ignore every class not listed here. Example: ['teddy bear']
-filter_classes = ['person', 'teddy bear', 'BG', 'mouse', 'chair', 'keyboard', 'cup', 'book', 'bottle']
+filter_classes = ['person']
 
 # If not empty, only track classes listed here (otherwise apply BG motion)
-trackable_classes = ['teddy bear', 'BG', 'mouse', 'chair', 'keyboard', 'cup', 'book', 'bottle']
+trackable_classes = []
 
 # Reject predictions with lower score
 score_threshold = 0.55

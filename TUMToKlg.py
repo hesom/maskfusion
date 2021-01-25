@@ -84,7 +84,7 @@ def convertToKlg(datasetPath, outputFile = './out.klg'):
         output_file.write(count.to_bytes(4, byteorder="little", signed=True))
 
         for i, p in imgFrames.items():
-            img = cv2.imread(p['path'])
+            img = cv2.imread(p['path'])[..., ::-1]
             depth_path = depthFrames[p['depthId']]['path']
             depth = (cv2.imread(depth_path, cv2.IMREAD_UNCHANGED)/5.0)
             

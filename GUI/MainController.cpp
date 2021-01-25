@@ -176,6 +176,7 @@ MainController::MainController(int argc, char* argv[])
 
             logReader = std::unique_ptr<LogReader>(imageLogReader);
             usePrecomputedMasksOnly = imageLogReader->hasPrecomputedMasksOnly();
+            std::cout << "Use Precomputed Masks only:" << usePrecomputedMasksOnly << std::endl;
             logReaderReady = true;
         }
     }

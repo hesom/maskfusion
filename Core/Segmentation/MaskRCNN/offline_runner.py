@@ -38,7 +38,6 @@ from PIL import Image
 from helpers import *
 import time
 import pytoml as toml
-import scipy.misc
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-i", required=True, help="Input directory (all files are being processed)")
@@ -50,8 +49,8 @@ args = parser.parse_args()
 
 # FURTHER PARAMETERS
 EXTENSIONS = ['jpg', 'png']
-FILTER_IMAGE_NAME = ""  # only use images, whose name contains this string (eg "Color")
-score_threshold = 0.85
+FILTER_IMAGE_NAME = "Color"  # only use images, whose name contains this string (eg "Color")
+score_threshold = 0.1
 SPECIAL_ASSIGNMENTS = {} #{'person': 255}
 SINGLE_INSTANCES = False
 OUTPUT_FRAMES = True
@@ -140,14 +139,14 @@ for idx, file_name in enumerate(file_names):
     if idx < START_INDEX:
         continue
 
-    base_name = str(idx).zfill(4)
+    base_name = "Mask" + str(idx).zfill(4)
 
     if os.path.isfile(os.path.join(OUTPUT_DIR, base_name + ".png")):
         continue
 
     print("Starting to work on frame", base_name)
 
-    image = scipy.misc.imread(os.path.join(IMAGE_DIR, file_name))
+    image = plt.imread(os.path.join(IMAGE_DIR, file_name))
     h, w = image.shape[:2]
 
     results = model.detect([image], verbose=0)

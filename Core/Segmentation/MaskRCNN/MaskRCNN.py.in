@@ -70,7 +70,7 @@ MODEL_DIR = os.path.join(DATA_DIR, "logs")
 # PARAMETERS
 
 # This only has an effect if the list contains at least 1 class name:
-SPECIAL_ASSIGNMENTS = {'person': 255}  # Example: {'person': 255}
+SPECIAL_ASSIGNMENTS = {}  # Example: {'person': 255}
 SINGLE_INSTANCES = False
 OUTPUT_FRAMES = True
 STORE_CLASS_IDS = True

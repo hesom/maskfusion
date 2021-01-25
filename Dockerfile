@@ -152,7 +152,6 @@ RUN git clone --branch 3.4.1 --depth=1 https://github.com/opencv/opencv.git &&\
     -DWITH_GPHOTO2=OFF  \
     -DWITH_MATLAB=OFF  \
     -DWITH_NVCUVID=OFF \
-    -DWITH_QT=ON \
     -DWITH_OPENCL=OFF \
     -DWITH_OPENCLAMDBLAS=OFF \
     -DWITH_OPENCLAMDFFT=OFF \
@@ -236,7 +235,6 @@ RUN ln -s `python -c "import numpy as np; print(np.__path__[0])"`/core/include/n
 
 RUN mkdir -p build && cd build && \
     cmake \
-        -DCMAKE_BUILD_TYPE=Release \
         -DBOOST_ROOT="${BOOST_ROOT}" \
         -DOpenCV_DIR="${OpenCV_DIR}" \
         -DPangolin_DIR="${Pangolin_DIR}" \

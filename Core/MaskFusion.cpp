@@ -853,7 +853,7 @@ void MaskFusion::exportPoses() {
     auto exportModelPoses = [&](ModelList list) {
         for (auto& m : list) {
             if (!m->isLoggingPoses()) continue;
-            std::string filename = exportDir + "poses-" + std::to_string(m->getID()) + ".txt";
+            std::string filename = exportDir + "poses-" + std::to_string(m->getID()) + "_" + std::to_string(m->getClassID()) + ".txt";
             std::cout << "Storing poses to " << filename << std::endl;
 
             std::ofstream fs;
